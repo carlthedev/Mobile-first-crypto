@@ -5,11 +5,37 @@ body {
   font-size: 1.1em;
   line-height: 1.5;
   text-align: center;
+  overflow: hidden;
 }
 
 .nav {
   display: grid;
   grid-template-columns: 70% 30%;
+}
+
+#dropdown {
+  display: none;
+  position: absolute;
+  width: 50%;
+  z-index: 1;
+  text-align: center;
+  right: 0;
+  list-style: none;
+  background-color: rgb(245, 244, 239);
+}
+
+#dropdown.active {
+  display: block;
+}
+
+#dropdown li {
+  padding: 10px 15px;
+  text-align: left;
+  text-shadow: 2px 2px 3px #fefffef5;
+}
+
+#menu {
+  position: relative;
 }
 
 .name {

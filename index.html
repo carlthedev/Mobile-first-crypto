@@ -6,17 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="navstyle.css">
+  <link rel="stylesheet" href="landing.css">
   <script src="https://kit.fontawesome.com/6e726280be.js"></script>
   <title>Crypto</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2R04Y94402"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2R04Y94402"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-2R04Y94402');
-</script>
+    gtag('config', 'G-2R04Y94402');
+  </script>
 </head>
 
 <body>
@@ -39,7 +40,39 @@
 
   </div>
 
-<script src="main.js"></script>
+  <div>
+    
+    <div id="data" ></div>
+    <script type="text/javascript">
+      var xmlhttp = new XMLHttpRequest();
+      var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+  
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4  &&  this.status == 200) {
+          var json = JSON.parse(this.responseText);
+          parseJson(json);
+        }		
+      };
+  
+      xmlhttp.open("GET", url, true);
+      xmlhttp.send();
+  
+      function parseJson(json) {
+        var time = "<b>Last Updated : " + json["time"]["updated"] + "</b>";
+        var usdValue = "1 BTC equals to $" + json["bpi"]["USD"]["rate"];
+        var gbpValue = "1 BTC equals to &pound;" + json["bpi"]["GBP"]["rate"];
+        var euroValue = "1 BTC equals to &euro;" + json["bpi"]["EUR"]["rate"];
+  
+        document.getElementById("data").innerHTML = time + 
+           "<br /><br />" + usdValue + 
+         "<br />" + gbpValue + 
+         "<br />" + euroValue;
+  }
+  </script>
+
+  </div>
+
+  <script src="main.js"></script>
 
 </body>
 

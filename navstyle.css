@@ -10,7 +10,6 @@ body {
 
 .nav {
   display: grid;
-  grid-template-columns: 70% 30%;
 }
 
 #dropdown {
@@ -55,6 +54,6 @@ body {
 
 .hamburger {
   margin: auto;
-  margin-right: 30px;
+  margin-right: 50px;
   color: rgb(133, 130, 130);
 }

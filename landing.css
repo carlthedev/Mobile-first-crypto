@@ -7,10 +7,20 @@
   padding: 10px;
 }
 
-#logo {
-  width: 320px;
-  height: 320px;
-  margin: 0 auto;
-  margin-top: 50px;
-  display: block;
+#header {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+}
+
+#header img {
+  width: auto;
+  height: 6vw;
+}
+
+#header h1 {
+  font-family: 'Orbitron', sans-serif;
+  color: rgb(68, 62, 62);
+  font-size: 4vw;
+  padding-left: 10px;
 }

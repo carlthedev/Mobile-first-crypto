@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="navstyle.css">
   <link rel="stylesheet" href="landing.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/6e726280be.js"></script>
   <title>Crypto</title>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -24,54 +27,57 @@
 
   <div class="nav">
 
-    <div class="name">
-      <h1><i class="fas fa-braille"></i> Crypto</h1>
-    </div>
-    <div class="hamburger">
-      <i class="fas fa-bars" id="menu"></i>
-      <ul id="dropdown">
-        <li>Blog</li>
-        <li>Twitter feed</li>
-        <li>Live crypto prices</li>
-        <li>Market caps</li>
-        <li>Special offers</li>
-      </ul>
+    <div id="header">
+
+      <img src="logo3.png" alt="">
+      <h1> Crypto Squires</h1>
+      <div class="hamburger">
+        <i class="fas fa-bars" id="menu"></i>
+        <ul id="dropdown">
+          <li>Blog</li>
+          <li>Twitter feed</li>
+          <li>Live crypto prices</li>
+          <li>Market caps</li>
+          <li>Special offers</li>
+        </ul>
+      </div>
+
     </div>
 
   </div>
 
   <div>
 
-    <div id="data" ></div>
+    <div id="data"></div>
 
     <h3>Powered by <a href="https://www.coindesk.com/price/bitcoin">Coindesk</a></h3>
-    
+
     <script type="text/javascript">
       var xmlhttp = new XMLHttpRequest();
       var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
-  
-      xmlhttp.onreadystatechange = function() {
-        if (this.readyState == 4  &&  this.status == 200) {
+
+      xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
           var json = JSON.parse(this.responseText);
           parseJson(json);
-        }		
+        }
       };
-  
+
       xmlhttp.open("GET", url, true);
       xmlhttp.send();
-  
+
       function parseJson(json) {
         var time = "<b>Last Updated : " + json["time"]["updated"] + "</b>";
         var usdValue = "BTC $" + json["bpi"]["USD"]["rate"];
         var gbpValue = "BTC &pound;" + json["bpi"]["GBP"]["rate"];
         var euroValue = "BTC &euro;" + json["bpi"]["EUR"]["rate"];
-  
-        document.getElementById("data").innerHTML = time + 
-           "<br /><br />" + usdValue + 
-         "<br />" + gbpValue + 
-         "<br />" + euroValue;
-  }
-  </script>
+
+        document.getElementById("data").innerHTML = time +
+          "<br /><br />" + usdValue +
+          "<br />" + gbpValue +
+          "<br />" + euroValue;
+      }
+    </script>
 
   </div>
 

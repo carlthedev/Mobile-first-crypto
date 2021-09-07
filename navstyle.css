@@ -1,11 +1,8 @@
 body {
   padding: 0px;
   margin: 0px;
-  color: rgb(82, 30, 226);
   font-size: 1.1em;
-  line-height: 1.5;
   text-align: center;
-  overflow: hidden;
 }
 
 .nav {

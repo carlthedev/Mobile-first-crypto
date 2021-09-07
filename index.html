@@ -21,6 +21,7 @@
 
     gtag('config', 'G-2R04Y94402');
   </script>
+
 </head>
 
 <body>
@@ -47,14 +48,18 @@
   </div>
 
   <div id="scroll-container">
-    <div id="scroll-text">Lite - Etherium - Doge - Ripple - Bitcoin</div>
+    <div id="scroll-text">
+      <h1>Live Bitcoin price:</h1>
+      <p id="output"></p>
+      <p id="output2"></p>
+      <p id="output3"></p>
+      <h3>Powered by <a href="https://www.coindesk.com/price/bitcoin">Coindesk</a></h3>
+    </div>
   </div>
 
   <div>
 
     <div id="data"></div>
-
-    <h3>Powered by <a href="https://www.coindesk.com/price/bitcoin">Coindesk</a></h3>
 
     <script type="text/javascript">
       var xmlhttp = new XMLHttpRequest();
@@ -72,20 +77,41 @@
 
       function parseJson(json) {
         var time = "<b>Last Updated : " + json["time"]["updated"] + "</b>";
-        var usdValue = "BTC $" + json["bpi"]["USD"]["rate"];
-        var gbpValue = "BTC &pound;" + json["bpi"]["GBP"]["rate"];
-        var euroValue = "BTC &euro;" + json["bpi"]["EUR"]["rate"];
+        var usdValue = "$" + json["bpi"]["USD"]["rate"];
+        var gbpValue = "&pound;" + json["bpi"]["GBP"]["rate"];
+        var euroValue = "&euro;" + json["bpi"]["EUR"]["rate"];
 
         document.getElementById("data").innerHTML = time +
           "<br /><br />" + usdValue +
           "<br />" + gbpValue +
           "<br />" + euroValue;
+        document.getElementById('output').innerHTML = gbpValue;
+        document.getElementById('output2').innerHTML = usdValue;
+        document.getElementById('output3').innerHTML = euroValue;
       }
+
+
     </script>
+
+    <script src="main.js"></script>
 
   </div>
 
-  <script src="main.js"></script>
+  <div id="section-a" class="grid">
+    <div class="content-wrap">
+      <div id="twitter">
+
+        <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/crypto_squires?ref_src=twsrc%5Etfw">Tweets by crypto_squires</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="icons">
+      <a href="https://www.instagram.com/cryptosquires/"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/crypto_squires"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
 
 </body>
 

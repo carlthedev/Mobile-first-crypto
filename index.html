@@ -26,77 +26,78 @@
 
 <body>
 
-  <div class="nav">
-
-    <div id="header">
-
-      <img src="logo3.png" alt="">
-      <h1> Crypto Squires</h1>
-      <div class="hamburger">
-        <i class="fas fa-bars" id="menu"></i>
-        <ul id="dropdown">
-          <li>Blog</li>
-          <li>Twitter feed</li>
-          <li>Live crypto prices</li>
-          <li>Market caps</li>
-          <li>Special offers</li>
-        </ul>
-      </div>
-
-    </div>
-
+  <div id="header">
+    <img src="logo3.png" alt="">
+    <h1> Crypto Squires</h1>
   </div>
 
   <div id="scroll-container">
     <div id="scroll-text">
-      <h1>Live Bitcoin price:</h1>
+      <h1>BTC:</h1>
       <p id="output"></p>
       <p id="output2"></p>
       <p id="output3"></p>
-      <h3>Powered by <a href="https://www.coindesk.com/price/bitcoin">Coindesk</a></h3>
+      <p id="powered">Powered</p>
+      <p id="by">by</p>
+      <a href="https://www.coindesk.com/price/bitcoin">Coindesk</a>
     </div>
   </div>
 
-  <div>
+  <div id="data"></div>
 
-    <div id="data"></div>
+  <div class="twitadds">
+    
+      <div class="leftadds">leftadds</div>
 
-    <script type="text/javascript">
-      var xmlhttp = new XMLHttpRequest();
-      var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
+      <div id="twitter">
+        <a class="twitter-timeline" data-theme="dark"
+          href="https://twitter.com/crypto_squires?ref_src=twsrc%5Etfw">Tweets by crypto_squires</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
 
-      xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          var json = JSON.parse(this.responseText);
-          parseJson(json);
-        }
-      };
+      <div class="rightadds">rightadds</div>
+    
+  </div>
 
-      xmlhttp.open("GET", url, true);
-      xmlhttp.send();
+  <script type="text/javascript">
+    var xmlhttp = new XMLHttpRequest();
+    var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
-      function parseJson(json) {
-        var time = "<b>Last Updated : " + json["time"]["updated"] + "</b>";
-        var usdValue = "$" + json["bpi"]["USD"]["rate"];
-        var gbpValue = "&pound;" + json["bpi"]["GBP"]["rate"];
-        var euroValue = "&euro;" + json["bpi"]["EUR"]["rate"];
-
-        document.getElementById("data").innerHTML = time +
-          "<br /><br />" + usdValue +
-          "<br />" + gbpValue +
-          "<br />" + euroValue;
-        document.getElementById('output').innerHTML = gbpValue;
-        document.getElementById('output2').innerHTML = usdValue;
-        document.getElementById('output3').innerHTML = euroValue;
+    xmlhttp.onreadystatechange = function () {
+      if (this.readyState == 4 && this.status == 200) {
+        var json = JSON.parse(this.responseText);
+        parseJson(json);
       }
+    };
+
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+
+    function parseJson(json) {
+      var time = "<b>Last Updated : " + json["time"]["updated"] + "</b>";
+      var usdValue = "$" + json["bpi"]["USD"]["rate"];
+      var gbpValue = "&pound;" + json["bpi"]["GBP"]["rate"];
+      var euroValue = "&euro;" + json["bpi"]["EUR"]["rate"];
+
+      usdValue = usdValue.substring(0, usdValue.length - 5);
+      gbpValue = gbpValue.substring(0, gbpValue.length - 5);
+      euroValue = euroValue.substring(0, euroValue.length - 5);
+
+      document.getElementById("data").innerHTML = time +
+        "<br /><br />" + usdValue +
+        "<br />" + gbpValue +
+        "<br />" + euroValue;
+      document.getElementById('output').innerHTML = gbpValue;
+      document.getElementById('output2').innerHTML = usdValue;
+      document.getElementById('output3').innerHTML = euroValue;
+    }
 
 
-    </script>
-
-    <script src="main.js"></script>
+  </script>
 
   </div>
 
+  <!-- 
   <div id="section-a" class="grid">
     <div class="content-wrap">
       <div id="twitter">
@@ -105,13 +106,7 @@
       </div>
     </div>
   </div>
-
-  <footer class="footer">
-    <div class="icons">
-      <a href="https://www.instagram.com/cryptosquires/"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/crypto_squires"><i class="fab fa-twitter"></i></a>
-    </div>
-  </footer>
+  -->
 
 </body>
 

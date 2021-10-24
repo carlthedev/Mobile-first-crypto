@@ -1,28 +1,32 @@
-*{
-  background-color: ;
-}
-
-#data {
-  display: none;
-}
-
-#header {
-  display: flex;
-  align-items: center;
-  padding-left: 50px;
-}
-
-#header img {
-  width: auto;
-  height: 8vw;
-}
+/* Logo and title styling */
 
 #header h1 {
   font-family: 'Orbitron', sans-serif;
   color: rgb(124, 126, 124);
-  font-size: 4vw;
   padding-left: 10px;
+  font-size: 40px;
 }
+
+#header img {
+    width: auto;
+    height: 30px;
+  }
+
+#header {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 420px) {
+  #header h1 {
+    font-size: 7vw;
+  }
+}
+
+/* Logo and title styling end */
+
+/* Sliding text styling */
 
 #scroll-container {
   border-radius: 5px;
@@ -31,18 +35,17 @@
 
 #scroll-text {
   text-align: right;
-  color: blue;
 
   /* animation properties */
   -moz-transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
   
-  -moz-animation: my-animation 15s linear infinite;
-  -webkit-animation: my-animation 15s linear infinite;
-  animation: my-animation 15s linear infinite;
+  -moz-animation: my-animation 20s linear infinite;
+  -webkit-animation: my-animation 20s linear infinite;
+  animation: my-animation 20s linear infinite;
+  animation-direction: reverse;
 }
-
 /* for Firefox */
 @-moz-keyframes my-animation {
   from { -moz-transform: translateX(-100%); }
@@ -54,7 +57,6 @@
   from { -webkit-transform: translateX(-100%); }
   to { -webkit-transform: translateX(100%); }
 }
-
 @keyframes my-animation {
   from {
     -moz-transform: translateX(-100%);
@@ -67,49 +69,23 @@
     transform: translateX(100%);
   }
 }
-
-.footer{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: rgb(124, 126, 124);
-  text-align: center;
-  color: #f4f4f4;
-}
-
-.icons{
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.icons a{
-  text-decoration: none;
-  font-size: 1.2rem;
-  margin: 0.5rem;
-  color: #f4f4f4;
-}
-
-#scroll-container {
-  border-radius: 0%;
-}
-
 #scroll-text {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 2vw;
 }
 
-#scroll-text h1{
-  font-size: 2vw;
+#scroll-text h1, p, a{
+  font-family: sans-serif;
+  font-size: 15px;
   margin-right: 10px;
   color: black;
 }
  
 #output {
 margin-right: 10px;
+color: rgb(56, 99, 216);
 }
 
 #output2 {
@@ -122,7 +98,36 @@ margin-right: 10px;
     color: orange;
     }
 
-#twitter {
-  padding: 20px 20px 90px 20px;
-  width: 50%;
+#powered {
+  margin-right: 2px;
 }
+
+#by {
+  margin-right: 2px;
+}
+#data {
+  display: none;
+}
+/* Sliding text styling end */
+
+/* Twitter and adds styling */
+
+.twitadds {
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.leftadds, .rightadds {
+  background-color: brown;
+  border-radius: 5px;
+}
+
+/* Twitter and adds styling end */
+
+
+
+
+
+
+

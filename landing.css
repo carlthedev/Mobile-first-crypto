@@ -95,7 +95,7 @@ color: rgb(56, 99, 216);
 
 #output3 {
     margin-right: 10px;
-    color: orange;
+    color: rgb(153, 101, 4);
     }
 
 #powered {
@@ -116,10 +116,21 @@ color: rgb(56, 99, 216);
   padding-top: 20px;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
+  gap: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .leftadds, .rightadds {
-  background-color: brown;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.leftadds img, .rightadds img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 5px;
 }
 

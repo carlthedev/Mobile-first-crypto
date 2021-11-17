@@ -33,40 +33,101 @@
 
   <div id="scroll-container">
     <div id="scroll-text">
-      <h1>BTC:</h1>
+      <i class="fab fa-bitcoin fa-1x"></i>
+      <p></p>
       <p id="output"></p>
       <p id="output2"></p>
       <p id="output3"></p>
-      <p id="powered">Powered</p>
-      <p id="by">by</p>
-      <a href="https://www.coindesk.com/price/bitcoin">Coindesk</a>
+      <a href="https://www.coindesk.com/price/bitcoin">Powered by Coindesk</a>
     </div>
   </div>
 
   <div id="data"></div>
 
-  <div class="twitadds">
+  <div id="wrapper">
+    <div class="tabs">
+      <input hidden type="radio" name="tab-css" id="tab-1" checked />
+      <label class="tab-control" for="tab-1">Crypto's</label>
+      <input hidden type="radio" name="tab-css" id="tab-2" />
+      <label class="tab-control" for="tab-2">News</label>
+      <input hidden type="radio" name="tab-css" id="tab-3" />
+      <label class="tab-control" for="tab-3">Squire calculator</label>
+      <input hidden type="radio" name="tab-css" id="tab-4" />
+      <label class="tab-control" for="tab-4">Products</label>
+      
+  
+      <div class="tab-content">
+        <div id="tab-panel-1" class="tab-panel">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Asperiores ab expedita et commodi nisi quam iusto sapiente, dolor
+            delectus quae dignissimos quia voluptatibus enim ipsum atque
+            sequi, totam saepe tempore.
+          </p>
+          <p>
+            Suscipit sunt iste facere obcaecati libero repellendus. Soluta
+            voluptatibus debitis dolores quod odio ullam minus quam, facilis
+            illo inventore nihil aliquid laborum consequuntur quas dolorem
+            itaque voluptate vel maiores ad.
+          </p>
+          
+        </div>
+        <div id="tab-panel-2" class="tab-panel">
+          <div class="twitadds">
 
-    <div class="leftadds">
-      <img  src="adplc2.jpg" alt="">
-      <img id="ad1"src="adplc2.jpg" alt="">
-      <img id="ad2"src="adplc2.jpg" alt="">
+            <div class="leftadds">
+              <!--
+              <img  src="adplc2.jpg" alt="">
+              <img id="ad1"src="adplc2.jpg" alt="">
+              <img id="ad2"src="adplc2.jpg" alt="">
+              -->
+            </div>
+        
+            <div id="twitter">
+              <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/crypto_squires?ref_src=twsrc%5Etfw">Tweets
+                by crypto_squires</a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+        
+            <div class="rightadds">
+              <!--
+              <img src="adplc2.jpg" alt="">
+              <img src="adplc2.jpg" alt="">
+              <img src="adplc2.jpg" alt="">
+              -->
+            </div>
+        
+          </div>
+        </div>
+        <div id="tab-panel-3" class="tab-panel">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Asperiores ab expedita et commodi nisi quam iusto sapiente, dolor
+            delectus quae dignissimos quia voluptatibus enim ipsum atque
+            sequi, totam saepe tempore.
+          </p>
+          <p>
+            Suscipit sunt iste facere obcaecati libero repellendus. Soluta
+            voluptatibus debitis dolores quod odio ullam minus quam, facilis
+            illo inventore nihil aliquid laborum consequuntur quas dolorem
+            itaque voluptate vel maiores ad.
+          </p>
+        </div>
+        <div id="tab-panel-4" class="tab-panel">
+          <p>
+            Suscipit sunt iste facere obcaecati libero repellendus. Soluta
+            voluptatibus debitis dolores quod odio ullam minus quam, facilis
+            illo inventore nihil aliquid laborum consequuntur quas dolorem
+            itaque voluptate vel maiores ad.
+          </p>
+        </div>
+      </div>
     </div>
-
-    <div id="twitter">
-      <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/crypto_squires?ref_src=twsrc%5Etfw">Tweets
-        by crypto_squires</a>
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
-
-    <div class="rightadds">
-      <img src="adplc2.jpg" alt="">
-      <img src="adplc2.jpg" alt="">
-      <img src="adplc2.jpg" alt="">
-    </div>
-
   </div>
 
+  <!--
+  
+  -->
   <script type="text/javascript">
     var xmlhttp = new XMLHttpRequest();
     var url = "https://api.coindesk.com/v1/bpi/currentprice.json";
@@ -105,16 +166,7 @@
 
   </div>
 
-  <!-- 
-  <div id="section-a" class="grid">
-    <div class="content-wrap">
-      <div id="twitter">
-
-        <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/crypto_squires?ref_src=twsrc%5Etfw">Tweets by crypto_squires</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-    </div>
-  </div>
-  -->
+  <script src="main.js"></script>
 
 </body>
 

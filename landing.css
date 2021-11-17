@@ -31,10 +31,16 @@
 #scroll-container {
   border-radius: 5px;
   overflow: hidden;
+  
 }
 
+#scroll-text a{
+  font-family: sans-serif;
+  color: rgb(63, 62, 62);
+}
 #scroll-text {
   text-align: right;
+  
 
   /* animation properties */
   -moz-transform: translateX(-100%);
@@ -76,11 +82,14 @@
   align-items: center;
 }
 
-#scroll-text h1, p, a{
+#scroll-text p, a{
   font-family: sans-serif;
   font-size: 15px;
   margin-right: 10px;
-  color: black;
+}
+
+#scroll-text i{
+  color: orange;
 }
  
 #output {
@@ -115,10 +124,8 @@ color: rgb(56, 99, 216);
 .twitadds {
   padding-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
   gap: 20px;
-  padding-left: 10%;
-  padding-right: 10%;
 }
 
 .leftadds, .rightadds {
@@ -134,11 +141,81 @@ color: rgb(56, 99, 216);
   border-radius: 5px;
 }
 
-/* Twitter and adds styling end */
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap");
 
 
+[hidden] {
+  display: none;
+  /* visibility: hidden;
+        opacity: 1; */
+}
 
+body {
+  font-family: "Overpass", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
 
+p {
+  margin-bottom: 1rem;
+}
 
+#wrapper {
+  display: flex;
+  height: auto;
+  margin: 0 auto;
+}
+
+.tabs {
+  width: 100%;
+  background-color: white;
+  
+}
+
+.tab-control {
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  font-size: 1.25rem;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-control:hover {
+  color: #928d8f;
+}
+
+.tab-content {
+  
+  padding: 1rem;
+}
+
+.tab-panel {
+  display: none;
+}
+
+/* Magic style */
+input[type="radio"]:checked + .tab-control {
+  font-weight: 600;
+  color: #070707;
+  border-bottom-color: #070707;
+}
+
+#tab-1:checked ~ .tab-content > #tab-panel-1 {
+  display: block;
+}
+
+#tab-2:checked ~ .tab-content > #tab-panel-2 {
+  display: block;
+}
+
+#tab-3:checked ~ .tab-content > #tab-panel-3 {
+  display: block;
+}
+
+#tab-4:checked ~ .tab-content > #tab-panel-4 {
+  display: block;
+}
 
 

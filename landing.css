@@ -170,7 +170,7 @@ p {
 .tabs {
   width: 100%;
   background-color: white;
-  
+  text-align: center;
 }
 
 .tab-control {
@@ -187,7 +187,7 @@ p {
 }
 
 .tab-content {
-  
+  text-align: start;
   padding: 1rem;
 }
 

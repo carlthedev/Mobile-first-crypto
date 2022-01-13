@@ -183,7 +183,6 @@ p {
 }
 
 .tab-content {
-  text-align: start;
   padding: 1rem;
 }
 
@@ -214,4 +213,17 @@ input[type="radio"]:checked + .tab-control {
   display: block;
 }
 
+#live-prices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+#live-prices img {
+  width: 1.5rem;
+}
+
+#live-prices p{
+  margin-left: 20px;
+  margin-right: 20px;
+}

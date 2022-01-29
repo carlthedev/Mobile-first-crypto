@@ -153,6 +153,10 @@ body {
   color: #333;
 }
 
+body h3 {
+    text-align: center;
+}
+
 p {
   margin-bottom: 1rem;
 }
@@ -161,56 +165,6 @@ p {
   display: flex;
   height: auto;
   margin: 0 auto;
-}
-
-.tabs {
-  width: 100%;
-  background-color: white;
-  text-align: center;
-}
-
-.tab-control {
-  display: inline-block;
-  border-bottom: 2px solid transparent;
-  font-size: 1.25rem;
-  padding: 0.6rem 1rem;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.tab-control:hover {
-  color: #928d8f;
-}
-
-.tab-content {
-  padding: 1rem;
-}
-
-.tab-panel {
-  display: none;
-}
-
-/* Magic style */
-input[type="radio"]:checked + .tab-control {
-  font-weight: 600;
-  color: #070707;
-  border-bottom-color: #070707;
-}
-
-#tab-1:checked ~ .tab-content > #tab-panel-1 {
-  display: block;
-}
-
-#tab-2:checked ~ .tab-content > #tab-panel-2 {
-  display: block;
-}
-
-#tab-3:checked ~ .tab-content > #tab-panel-3 {
-  display: block;
-}
-
-#tab-4:checked ~ .tab-content > #tab-panel-4 {
-  display: block;
 }
 
 #live-prices {
@@ -226,4 +180,35 @@ input[type="radio"]:checked + .tab-control {
 #live-prices p{
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+  
+}
+
+.grid-3-cols img {
+  width: 1.5rem;
+}
+.grid-3-cols p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.grid-3-cols a img {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#glossary {
+  width: 50%;
+  margin: auto;
 }

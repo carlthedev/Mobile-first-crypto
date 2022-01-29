@@ -32,6 +32,7 @@
 
   <div id="scroll-container">
     <div id="scroll-text">
+      <p>Welcome to crypto squires! </p>
       <i class="fab fa-bitcoin fa-1x"></i>
       <p></p>
       <p id="output"></p>
@@ -43,181 +44,138 @@
 
   <div id="data"></div>
 
-  <div id="wrapper">
-    <div class="tabs">
-      <input hidden type="radio" name="tab-css" id="tab-1" checked />
-      <label class="tab-control" for="tab-1">Crypto's</label>
-      <input hidden type="radio" name="tab-css" id="tab-2" />
-      <label class="tab-control" for="tab-2">News</label>
-      <input hidden type="radio" name="tab-css" id="tab-3" />
-      <label class="tab-control" for="tab-3">Squire calculator</label>
-      <input hidden type="radio" name="tab-css" id="tab-4" />
-      <label class="tab-control" for="tab-4">Products</label>
+  <h3>Live crypto prices feed</h3>
 
+  <div id="glossary">
 
-      <div class="tab-content">
-        <div id="tab-panel-1" class="tab-panel">
+    <div class="grid-3-cols">
+      <img src="btc.png" alt="">
+      <p id='Bitcoin Price'></p>
+      <a href="https://www.cryptocompare.com/coins/btc/overview/USDT"><img src="chart.png" alt=""></a>
+    </div>
 
-          <div id="live-prices">
-            <img src="btc.png" alt="">
-            <p id='Bitcoin Price'></p> 
-            <a href="https://www.cryptocompare.com/coins/btc/overview/USDT"><img src="chart.png" alt=""></a>
-          </div>
+    <div class="grid-3-cols">
+      <img src="xrp.png" alt="">
+      <p id='XRP Price'></p>
+      <a href="https://www.cryptocompare.com/coins/xrp/overview/USD"><img src="chart.png" alt=""></a>
+    </div>
 
-          <div id="live-prices">
-            <img src="eth.png" alt="">
-          <p id='ETH Price'></p>
-          <a href="https://www.cryptocompare.com/coins/eth/overview/BTC"><img src="chart.png" alt=""></a>
-          </div>
+    <div class="grid-3-cols">
+      <img src="lite.png" alt="">
+      <p id='LTC Price'></p>
+      <a href="https://www.cryptocompare.com/coins/ltc/overview/USD"><img src="chart.png" alt=""></a>
+    </div>
 
-          <div id="live-prices">
-            <img src="bch.png" alt="">
-            <p id='BCH Price'></p>
-            <a href="https://www.cryptocompare.com/coins/bch/overview/USD"><img src="chart.png" alt=""></a>
-          </div>
+    <div class="grid-3-cols">
+      <img src="doge.png" alt="">
+      <p id='DOGE Price'></p>
+      <a href="https://www.cryptocompare.com/coins/doge/overview/USD"><img src="chart.png" alt=""></a>
+    </div>
 
-          <div id="live-prices">
-            <img src="doge.png" alt="">
-            <p id='DOGE Price'></p>
-            <a href="https://www.cryptocompare.com/coins/doge/overview/USD"><img src="chart.png" alt=""></a>
-          </div>
+    <div class="grid-3-cols">
+      <img src="bch.png" alt="">
+      <p id='BCH Price'></p>
+      <a href="https://www.cryptocompare.com/coins/bch/overview/USD"><img src="chart.png" alt=""></a>
+    </div>
 
-          <div id="live-prices">
-            <img src="lite.png" alt="">
-            <p id='LTC Price'></p>
-            <a href="https://www.cryptocompare.com/coins/ltc/overview/USD"><img src="chart.png" alt=""></a>
-          </div>
-
-          <div id="live-prices">
-            <img src="xrp.png" alt="">
-          <p id='XRP Price'></p>
-          <a href="https://www.cryptocompare.com/coins/xrp/overview/USD"><img src="chart.png" alt=""></a>
-          </div>
-
-          <script>
-            const getBtcData = async () => {
-              fetch('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD')
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  document.getElementById("Bitcoin Price").innerHTML = 'BTC ' + '$' + data.USD
-                });
-            }
-            getBtcData();
-
-            const getETHData = async () => {
-              fetch('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  document.getElementById("ETH Price").innerHTML = 'ETH ' + '$' + data.USD
-                });
-            }
-            getETHData();
-
-            const getDogeData = async () => {
-              fetch('https://min-api.cryptocompare.com/data/price?fsym=DOGE&tsyms=USD')
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  document.getElementById("DOGE Price").innerHTML = 'DOGE ' + '$' + data.USD
-                });
-            }
-            getDogeData();
-
-            const getLtcData = async () => {
-              fetch('https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD')
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  document.getElementById("LTC Price").innerHTML = 'LTC '+ '$' + data.USD
-                });
-            }
-            getLtcData();
-
-            const getXrpData = async () => {
-              fetch('https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD')
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  document.getElementById("XRP Price").innerHTML = 'XRP '+ '$' + data.USD
-                });
-            }
-            getXrpData();
-
-            const getBchData = async () => {
-              fetch('https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD')
-                .then(response => response.json())
-                .then(data => {
-                  console.log(data);
-                  document.getElementById("BCH Price").innerHTML = 'BCH ' + '$' + data.USD
-                });
-            }
-            getBchData();
-
-          </script>
-
-        </div>
-        <div id="tab-panel-2" class="tab-panel">
-          <div class="twitadds">
-
-            <div class="leftadds">
-              <!--
-              <img  src="adplc2.jpg" alt="">
-              <img id="ad1"src="adplc2.jpg" alt="">
-              <img id="ad2"src="adplc2.jpg" alt="">
-              -->
-            </div>
-
-            <div id="twitter">
-              <a class="twitter-timeline" data-theme="dark"
-                href="https://twitter.com/crypto_squires?ref_src=twsrc%5Etfw">Tweets
-                by crypto_squires</a>
-              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-
-            <div class="rightadds">
-              <!--
-              <img src="adplc2.jpg" alt="">
-              <img src="adplc2.jpg" alt="">
-              <img src="adplc2.jpg" alt="">
-              -->
-            </div>
-
-          </div>
-        </div>
-        <div id="tab-panel-3" class="tab-panel">
-          <h3>Crypto currency price converter.</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Asperiores ab expedita et commodi nisi quam iusto sapiente, dolor
-            delectus quae dignissimos quia voluptatibus enim ipsum atque
-            sequi, totam saepe tempore.
-          </p>
-          <p>
-            Suscipit sunt iste facere obcaecati libero repellendus. Soluta
-            voluptatibus debitis dolores quod odio ullam minus quam, facilis
-            illo inventore nihil aliquid laborum consequuntur quas dolorem
-            itaque voluptate vel maiores ad.
-          </p>
-        </div>
-        <div id="tab-panel-4" class="tab-panel">
-
-          <h3>Affilate links for products.</h3>
-          <p>
-            Suscipit sunt iste facere obcaecati libero repellendus. Soluta
-            voluptatibus debitis dolores quod odio ullam minus quam, facilis
-            illo inventore nihil aliquid laborum consequuntur quas dolorem
-            itaque voluptate vel maiores ad.
-          </p>
-        </div>
-      </div>
+    <div class="grid-3-cols">
+      <img src="eth.png" alt="">
+      <p id='ETH Price'></p>
+      <a href="https://www.cryptocompare.com/coins/eth/overview/BTC"><img src="chart.png" alt=""></a>
     </div>
   </div>
 
-  <!--
-  
-  -->
+  <div class="twitadds">
+
+    <div class="leftadds">
+      <!--
+            <img  src="adplc2.jpg" alt="">
+            <img id="ad1"src="adplc2.jpg" alt="">
+            <img id="ad2"src="adplc2.jpg" alt="">
+            -->
+    </div>
+
+    <div id="twitter">
+      <a class="twitter-timeline" data-theme="dark" href="https://twitter.com/crypto_squires?ref_src=twsrc%5Etfw">Tweets
+        by crypto_squires</a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+
+    <div class="rightadds">
+      <!--
+            <img src="adplc2.jpg" alt="">
+            <img src="adplc2.jpg" alt="">
+            <img src="adplc2.jpg" alt="">
+            -->
+    </div>
+
+  </div>
+
+  <script>
+    const getBtcData = async () => {
+      fetch('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById("Bitcoin Price").innerHTML = 'BTC ' + '$' + data.USD
+        });
+    }
+    getBtcData();
+
+    const getETHData = async () => {
+      fetch('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById("ETH Price").innerHTML = 'ETH ' + '$' + data.USD
+        });
+    }
+    getETHData();
+
+    const getDogeData = async () => {
+      fetch('https://min-api.cryptocompare.com/data/price?fsym=DOGE&tsyms=USD')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById("DOGE Price").innerHTML = 'DOGE ' + '$' + data.USD
+        });
+    }
+    getDogeData();
+
+    const getLtcData = async () => {
+      fetch('https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById("LTC Price").innerHTML = 'LTC ' + '$' + data.USD
+        });
+    }
+    getLtcData();
+
+    const getXrpData = async () => {
+      fetch('https://min-api.cryptocompare.com/data/price?fsym=XRP&tsyms=USD')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById("XRP Price").innerHTML = 'XRP ' + '$' + data.USD
+        });
+    }
+    getXrpData();
+
+    const getBchData = async () => {
+      fetch('https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD')
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          document.getElementById("BCH Price").innerHTML = 'BCH ' + '$' + data.USD
+        });
+    }
+    getBchData();
+
+  </script>
+
+  </div>
+
   <script src="cryptoApi.js">
   </script>
 
